@@ -165,3 +165,30 @@
 
 
 // console.log(Users)
+
+
+
+// //12. Aliases 
+
+// type cardNumber = {
+//     cardNumber: number
+// }
+
+// type cardDate = {
+//     cardDate: number
+// }
+
+// type cvv = {
+//     cvv: number
+// }
+
+// type cardDetails = cardNumber & cardDate & cvv 
+
+// function createCard(c:cardDetails): cardDetails {
+//     return c
+// }
+
+// const result = createCard({cardNumber: 2100031265, cardDate: 30042003, cvv: 123})
+
+// console.log(result)
+
