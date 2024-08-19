@@ -88,17 +88,64 @@ console.log(employee)
 // f. literal: Specifies an exact value a variable can have
 let direction: "up" | "down" = "up";
 
-// g. enum: Enumerates a set of named constants
+// g. enum: Enumerates a set of named constants {Note: best practice is to use const before enum to avoid unwanted more code for clean and clear code}
 enum Color {
     Red,
     Green,
     Blue
 }
-let color: Color = Color.Green;
+let color: Color = Color.Green; // 1
 
-// h. type alias: Creates a custom type
+
+enum SlotBook {
+    First = 1,
+    Second = 2,
+    Third = 3,
+    Fourth = 4
+}
+
+const Booked_Slot = SlotBook.First
+
+console.log(Booked_Slot) // 1
+
+
+enum GenderChoice {
+    Male = 'male',
+    Female = 'female',
+    Others = 'others'
+}
+
+const Gender_Slot = GenderChoice.Male
+
+console.log(Gender_Slot) // male
+
+
+
+// h. type alias: Creates a custom type with union types
 type StringOrNumber = string | number;
 let result: StringOrNumber = "Test";
+
+const arr: (string | number | boolean)[] = [1,'2', true] // best practice
+const arr1: any[] = [1,'2', true] // not suggested
+
+
+type User = {
+    userName: string,
+    id: number
+}
+
+type Admin = {
+    adminName: string,
+    id: number
+}
+
+let chohan: User | Admin = {userName: 'koti-chohan', id:2100031265}
+
+console.log(chohan) //  { "userName": "koti-chohan", "id": 2100031265} 
+
+chohan = {adminName: 'koti-chohan-admin', id:2100031265}
+
+console.log(chohan) // { "adminName": "koti-chohan-admin", "id":2100031265}
 
 
 // 5. Function Types
